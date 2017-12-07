@@ -16,11 +16,16 @@ import { MessagesComponent } from './messages/messages.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { AlertComponent } from './_directives/alert.component';
+import { GeolocComponent } from './geoloc/geoloc.component';
 
 import { MessageService }       from './message.service';
 import { AuthenticationService }          from './authentication.service';
 import { UserService }          from './user.service';
 import { AlertService }          from './alert.service';
+import { GeolocationService }     from './geolocation.service'
+
+import { AgmCoreModule } from '@agm/core';
+
 
 
 @NgModule({
@@ -31,7 +36,8 @@ import { AlertService }          from './alert.service';
     DashboardComponent,
     MessagesComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    GeolocComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +45,9 @@ import { AlertService }          from './alert.service';
     AppRoutingModule,
     HttpClientModule,
     HttpModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyAvJttct4N_pR-09stN3CHlGvBqy8f5be4'
+    })
   ],
   providers: [
         MessageService,
