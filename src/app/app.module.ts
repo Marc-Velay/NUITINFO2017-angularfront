@@ -17,6 +17,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { AlertComponent } from './_directives/alert.component';
 import { GeolocComponent } from './geoloc/geoloc.component';
+import { GoogleLoginComponent } from './google-login/google-login.component';
 
 import { MessageService }       from './message.service';
 import { AuthenticationService }          from './authentication.service';
@@ -25,6 +26,8 @@ import { AlertService }          from './alert.service';
 import { GeolocationService }     from './geolocation.service'
 
 import { AgmCoreModule } from '@agm/core';
+
+import {GoogleSignInComponent} from 'angular-google-signin';
 
 
 
@@ -37,7 +40,9 @@ import { AgmCoreModule } from '@agm/core';
     MessagesComponent,
     LoginComponent,
     RegisterComponent,
-    GeolocComponent
+    GeolocComponent,
+    GoogleLoginComponent,
+    GoogleSignInComponent
   ],
   imports: [
     BrowserModule,

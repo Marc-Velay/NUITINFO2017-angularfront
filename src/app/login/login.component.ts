@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 import { AlertService } from '../alert.service';
 import { AuthenticationService } from '../authentication.service';
+import { GoogleLoginComponent } from '../google-login/google-login.component';
  
 @Component({
     moduleId: module.id,
@@ -15,20 +16,22 @@ export class LoginComponent implements OnInit {
     model: any = {};
     loading = false;
     returnUrl: string;
- 
+
     constructor(
         private route: ActivatedRoute,
         private router: Router,
         private authenticationService: AuthenticationService,
         private alertService: AlertService) { }
- 
+
+
+
     ngOnInit() {
         // reset login status
         this.authenticationService.logout();
  
         // get return url from route parameters or default to '/'
         this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
-        this.authenticationService.login('user', 'picklerick')
+        /*this.authenticationService.login('user', 'picklerick')
                     .subscribe(
                         data => {
                             this.router.navigate([this.returnUrl]);
@@ -38,6 +41,7 @@ export class LoginComponent implements OnInit {
                             console.log(error);
                             this.loading = false;
                         });
+        */
     }
  
     login() {

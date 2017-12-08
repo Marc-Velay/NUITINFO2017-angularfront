@@ -10,14 +10,14 @@ import { UserService } from '../user.service';
 })
  
 export class HomeComponent implements OnInit {
-    currentUser: User;
+    currentUser: any;
     users: User[] = [];
  
-    constructor(private userService: UserService) {
-        this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    constructor(private userService: UserService) {        
     }
  
     ngOnInit() {
+      this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
     }
  
 }

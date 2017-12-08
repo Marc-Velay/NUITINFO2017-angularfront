@@ -1,0 +1,13 @@
+<p>Bonjour: merci d'avoir sélectionné le login par google!</p>
+
+<google-signin
+  [clientId]="myClientId"
+  [width]="myWidth"
+  [theme]="myTheme"
+  [scope]="myScope"
+  [longTitle]="myLongTitle"
+  (googleSignInSuccess)="onGoogleSignInSuccess($event)">
+</google-signin>
+
+
+<!--<img [src]="profilePic" width="50" alt="Profile picture" >-->
